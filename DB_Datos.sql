@@ -1,19 +1,3 @@
--- --------------------------------------------------------
--- Host:                         148.212.195.26
--- Versión del servidor:         8.0.31-0ubuntu0.20.04.1 - (Ubuntu)
--- SO del servidor:              Linux
--- HeidiSQL Versión:             12.1.0.6537
--- --------------------------------------------------------
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
 -- Volcando datos para la tabla empresa.categoria_salario: ~5 rows (aproximadamente)
 INSERT INTO `categoria_salario` (`no_categoria`, `salario_minimo`, `salario_maximo`) VALUES
 	(1, 700, 1200),
@@ -40,6 +24,87 @@ INSERT INTO `departamento` (`no_departamento`, `nombre`, `ubicacion`) VALUES
 	(20, 'INVESTIGACION', 'MONTERREY'),
 	(30, 'VENTAS', 'GUADALAJARA'),
 	(40, 'OPERACIONES', 'TORREON');
+
+
+
+-- Volcando datos para la tabla empresa.empleados: ~14 rows (aproximadamente)
+INSERT INTO `empleados` (`no_empleado`, `no_departamento`, `nombre`, `puesto`, `jefe_directo`, `f_ingreso`, `salario`, `comision`) VALUES
+	(7369, 20, 'JACK', 'SECRETARIO', 7902, '2000-12-17', 800.00, NULL),
+	(7499, 30, 'GERARDO', 'A. VENTAS', 7698, '2001-02-20', 1600.00, 300.00),
+	(7521, 30, 'LAURA ', 'SECRETARIO', 7698, '2001-02-22', 1250.00, 500.00),
+	(7566, 20, 'MIGUEL ANGEL SOLER ROCHA', 'GERENTE', 7839, '2001-04-01', 2975.00, NULL),
+	(7654, 30, 'MARTIN', 'A. VENTAS', 7698, '2001-09-28', 1250.00, 1400.00),
+	(7698, 30, 'CARLOS DE LA ROSA', 'GERENTE', 7839, '2001-05-01', 2850.00, NULL),
+	(7782, 10, 'MARIA DE LA LUZ RIVAS', 'GERENTE', 7839, '2001-06-09', 2450.00, NULL),
+	(7788, 20, 'MAURICIO', 'ANALYST', 7566, '2002-12-09', 3000.00, NULL),
+	(7839, 10, 'LUIS ANTONIO MURRA ', 'DIRECTOR', NULL, '2001-11-17', 5000.00, NULL),
+	(7844, 30, 'RICARDO', 'A. VENTAS', 7698, '2001-09-08', 1500.00, 0.00),
+	(7876, 20, 'ALEJANDRO', 'SECRETARIO', 7788, '2003-01-12', 1100.00, NULL),
+	(7900, 30, 'JAIME', 'SECRETARIO', 7698, '2001-12-03', 950.00, NULL),
+	(7902, 20, 'OWALDO', 'ANALISTA', 7566, '2002-12-03', 3000.00, NULL),
+	(7934, 10, 'TANIA', 'SECRETARIO', 7782, '2002-01-23', 1300.00, NULL);
+
+
+
+-- Volcando datos para la tabla empresa.productos: ~10 rows (aproximadamente)
+INSERT INTO `productos` (`id_producto`, `descripcion`) VALUES
+	(100860, 'ACE TENNIS RACKET I'),
+	(100861, 'ACE TENNIS RACKET II'),
+	(100870, 'ACE TENNIS BALLS-3 PACK'),
+	(100871, 'ACE TENNIS BALLS-6 PACK'),
+	(100890, 'ACE TENNIS NET'),
+	(101860, 'SP TENNIS RACKET'),
+	(101863, 'SP ENEIOR RACKET'),
+	(102130, 'RH: "GUIDE TO TENNIS"'),
+	(200376, 'SB ENERGY BAR-6 PACK'),
+	(200380, 'SB VITA SNACK-6 PACK');
+	
+-- Volcando datos para la tabla empresa.ordenes: ~21 rows (aproximadamente)
+INSERT INTO `ordenes` (`id_orden`, `id_clientes`, `fecha_orden`, `con_plan`, `fecha_envio`, `total`) VALUES
+	(601, 106, '2006-05-01', 'A', '2006-06-30', 2.40),
+	(602, 102, '2006-01-01', 'B', '2006-01-20', 56.00),
+	(603, 102, '2006-01-05', NULL, '2006-01-05', 224.00),
+	(604, 106, '2006-01-15', 'A', '2006-01-30', 698.00),
+	(605, 106, '2006-06-15', 'A', '2006-06-30', 8324.00),
+	(606, 100, '2006-06-14', 'A', '2006-06-30', 3.40),
+	(607, 104, '2006-07-18', 'C', '2006-07-18', 5.60),
+	(608, 104, '2002-07-25', 'C', '1086-07-25', 35.20),
+	(609, 100, '2006-08-01', 'B', '1967-08-15', 97.50),
+	(610, 101, '2007-01-07', 'A', '2007-01-08', 101.40),
+	(611, 102, '2007-01-11', 'B', '2007-01-11', 45.00),
+	(612, 104, '2007-01-15', 'C', '2007-01-20', 5860.00),
+	(613, 102, '2007-02-01', NULL, '2007-02-01', 6400.00),
+	(614, 102, '2007-02-01', NULL, '2007-02-05', 23940.00),
+	(615, 107, '2007-02-01', NULL, '2007-02-06', 710.00),
+	(616, 103, '2007-02-02', NULL, '2007-02-10', 764.00),
+	(617, 105, '2007-02-05', NULL, '2007-03-03', 46370.00),
+	(618, 102, '2007-02-15', 'A', '2007-03-06', 3510.50),
+	(619, 104, '2007-02-22', NULL, '2004-02-04', 1260.00),
+	(620, 108, '2007-03-12', NULL, '2007-03-12', 4450.00),
+	(621, 100, '2007-03-15', 'A', '2007-01-01', 730.00);
+
+
+
+-- Volcando datos para la tabla empresa.precio: ~18 rows (aproximadamente)
+INSERT INTO `precio` (`idPrecio`, `id_producto`, `precio_normal`, `precio_minimo`, `fecha_inicio`, `fecha_final`) VALUES
+	(1, 100871, 4.80, 3.20, '2005-01-01', '2005-12-01'),
+	(2, 100890, 58.00, 46.40, '2005-01-01', NULL),
+	(3, 100890, 54.00, 40.50, '2004-01-01', '2004-05-31'),
+	(4, 100860, 35.00, 28.00, '2006-01-01', NULL),
+	(5, 100860, 32.00, 25.60, '2006-01-01', '2006-05-31'),
+	(6, 100860, 30.00, 24.00, '2005-01-01', '2005-05-31'),
+	(7, 100861, 45.00, 36.00, '2006-01-01', NULL),
+	(8, 100861, 42.00, 33.60, '2006-01-01', '2006-05-31'),
+	(9, 100861, 39.00, 31.20, '2006-01-01', '2005-12-31'),
+	(10, 100870, 2.80, 2.40, '2006-01-01', NULL),
+	(11, 100870, 2.40, 1.90, '2005-01-01', '2005-12-01'),
+	(12, 100871, 5.60, 4.80, '2006-01-01', NULL),
+	(13, 101860, 24.00, 18.00, '2005-02-15', NULL),
+	(14, 101863, 12.50, 9.40, '2005-02-15', NULL),
+	(15, 101863, 12.50, 9.40, '2005-02-15', NULL),
+	(16, 102130, 3.40, 2.80, '2005-08-18', NULL),
+	(17, 200376, 2.40, 1.75, '2006-11-15', NULL),
+	(18, 200380, 4.00, 3.20, '2006-11-15', NULL);
 
 -- Volcando datos para la tabla empresa.detalle_orden: ~64 rows (aproximadamente)
 INSERT INTO `detalle_orden` (`id_detalle_orden`, `id_orden`, `id_productos`, `precio_actual`, `cantidad`, `total_articulos`) VALUES
@@ -107,84 +172,4 @@ INSERT INTO `detalle_orden` (`id_detalle_orden`, `id_orden`, `id_productos`, `pr
 	(62, 620, 102130, 3.40, 500, 1700.00),
 	(63, 621, 100861, 45.00, 10, 450.00),
 	(64, 621, 100870, 2.80, 100, 280.00);
-
--- Volcando datos para la tabla empresa.empleados: ~14 rows (aproximadamente)
-INSERT INTO `empleados` (`no_empleado`, `no_departamento`, `nombre`, `puesto`, `jefe_directo`, `f_ingreso`, `salario`, `comision`) VALUES
-	(7369, 20, 'JACK', 'SECRETARIO', 7902, '2000-12-17', 800.00, NULL),
-	(7499, 30, 'GERARDO', 'A. VENTAS', 7698, '2001-02-20', 1600.00, 300.00),
-	(7521, 30, 'LAURA ', 'SECRETARIO', 7698, '2001-02-22', 1250.00, 500.00),
-	(7566, 20, 'MIGUEL ANGEL SOLER ROCHA', 'GERENTE', 7839, '2001-04-01', 2975.00, NULL),
-	(7654, 30, 'MARTIN', 'A. VENTAS', 7698, '2001-09-28', 1250.00, 1400.00),
-	(7698, 30, 'CARLOS DE LA ROSA', 'GERENTE', 7839, '2001-05-01', 2850.00, NULL),
-	(7782, 10, 'MARIA DE LA LUZ RIVAS', 'GERENTE', 7839, '2001-06-09', 2450.00, NULL),
-	(7788, 20, 'MAURICIO', 'ANALYST', 7566, '2002-12-09', 3000.00, NULL),
-	(7839, 10, 'LUIS ANTONIO MURRA ', 'DIRECTOR', NULL, '2001-11-17', 5000.00, NULL),
-	(7844, 30, 'RICARDO', 'A. VENTAS', 7698, '2001-09-08', 1500.00, 0.00),
-	(7876, 20, 'ALEJANDRO', 'SECRETARIO', 7788, '2003-01-12', 1100.00, NULL),
-	(7900, 30, 'JAIME', 'SECRETARIO', 7698, '2001-12-03', 950.00, NULL),
-	(7902, 20, 'OWALDO', 'ANALISTA', 7566, '2002-12-03', 3000.00, NULL),
-	(7934, 10, 'TANIA', 'SECRETARIO', 7782, '2002-01-23', 1300.00, NULL);
-
--- Volcando datos para la tabla empresa.ordenes: ~21 rows (aproximadamente)
-INSERT INTO `ordenes` (`id_orden`, `id_clientes`, `fecha_orden`, `commplan`, `fecha_envio`, `total`) VALUES
-	(601, 106, '2006-05-01', 'A', '2006-06-30', 2.40),
-	(602, 102, '2006-01-01', 'B', '2006-01-20', 56.00),
-	(603, 102, '2006-01-05', NULL, '2006-01-05', 224.00),
-	(604, 106, '2006-01-15', 'A', '2006-01-30', 698.00),
-	(605, 106, '2006-06-15', 'A', '2006-06-30', 8324.00),
-	(606, 100, '2006-06-14', 'A', '2006-06-30', 3.40),
-	(607, 104, '2006-07-18', 'C', '2006-07-18', 5.60),
-	(608, 104, '2002-07-25', 'C', '1086-07-25', 35.20),
-	(609, 100, '2006-08-01', 'B', '1967-08-15', 97.50),
-	(610, 101, '2007-01-07', 'A', '2007-01-08', 101.40),
-	(611, 102, '2007-01-11', 'B', '2007-01-11', 45.00),
-	(612, 104, '2007-01-15', 'C', '2007-01-20', 5860.00),
-	(613, 102, '2007-02-01', NULL, '2007-02-01', 6400.00),
-	(614, 102, '2007-02-01', NULL, '2007-02-05', 23940.00),
-	(615, 107, '2007-02-01', NULL, '2007-02-06', 710.00),
-	(616, 103, '2007-02-02', NULL, '2007-02-10', 764.00),
-	(617, 105, '2007-02-05', NULL, '2007-03-03', 46370.00),
-	(618, 102, '2007-02-15', 'A', '2007-03-06', 3510.50),
-	(619, 104, '2007-02-22', NULL, '2004-02-04', 1260.00),
-	(620, 108, '2007-03-12', NULL, '2007-03-12', 4450.00),
-	(621, 100, '2007-03-15', 'A', '2007-01-01', 730.00);
-
--- Volcando datos para la tabla empresa.precio: ~18 rows (aproximadamente)
-INSERT INTO `precio` (`idPrecio`, `id_producto`, `precio_normal`, `precio_minimo`, `fecha_inicio`, `fecha_final`) VALUES
-	(1, 100871, 4.80, 3.20, '2005-01-01', '2005-12-01'),
-	(2, 100890, 58.00, 46.40, '2005-01-01', NULL),
-	(3, 100890, 54.00, 40.50, '2004-01-01', '2004-05-31'),
-	(4, 100860, 35.00, 28.00, '2006-01-01', NULL),
-	(5, 100860, 32.00, 25.60, '2006-01-01', '2006-05-31'),
-	(6, 100860, 30.00, 24.00, '2005-01-01', '2005-05-31'),
-	(7, 100861, 45.00, 36.00, '2006-01-01', NULL),
-	(8, 100861, 42.00, 33.60, '2006-01-01', '2006-05-31'),
-	(9, 100861, 39.00, 31.20, '2006-01-01', '2005-12-31'),
-	(10, 100870, 2.80, 2.40, '2006-01-01', NULL),
-	(11, 100870, 2.40, 1.90, '2005-01-01', '2005-12-01'),
-	(12, 100871, 5.60, 4.80, '2006-01-01', NULL),
-	(13, 101860, 24.00, 18.00, '2005-02-15', NULL),
-	(14, 101863, 12.50, 9.40, '2005-02-15', NULL),
-	(15, 101863, 12.50, 9.40, '2005-02-15', NULL),
-	(16, 102130, 3.40, 2.80, '2005-08-18', NULL),
-	(17, 200376, 2.40, 1.75, '2006-11-15', NULL),
-	(18, 200380, 4.00, 3.20, '2006-11-15', NULL);
-
--- Volcando datos para la tabla empresa.productos: ~10 rows (aproximadamente)
-INSERT INTO `productos` (`id_producto`, `descripcion`) VALUES
-	(100860, 'ACE TENNIS RACKET I'),
-	(100861, 'ACE TENNIS RACKET II'),
-	(100870, 'ACE TENNIS BALLS-3 PACK'),
-	(100871, 'ACE TENNIS BALLS-6 PACK'),
-	(100890, 'ACE TENNIS NET'),
-	(101860, 'SP TENNIS RACKET'),
-	(101863, 'SP ENEIOR RACKET'),
-	(102130, 'RH: "GUIDE TO TENNIS"'),
-	(200376, 'SB ENERGY BAR-6 PACK'),
-	(200380, 'SB VITA SNACK-6 PACK');
-
-/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
+	
